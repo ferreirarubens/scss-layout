@@ -42,7 +42,7 @@ to all paddings
 class="p-4"
 ```
 
-This scss file is using *multiple of 4* and of *0 to 200* to apply styles in margin and padding; so if you whould like change, just download the layout.scss and remove that condition
+This scss file is using *multiple of 4* and of *0 to 200px* to apply styles in margin and padding; so if you whould like change, just download the layout.scss and remove that condition
 
 ### Todos
  - Write MORE styles
