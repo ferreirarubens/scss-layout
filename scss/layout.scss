@@ -24,7 +24,7 @@ $directions: b, t, r, l, x, y;
   }
 }
 
-@for $i from 0 through 8 {
+@for $i from 0 through 200 {
   $canRegister: $i % 0 == 0 or $i % 4 == 0;
   @if $canRegister {
     @each $direction in $directions {
