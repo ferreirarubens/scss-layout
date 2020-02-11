@@ -149,9 +149,6 @@ class="fx-evenly-end"
 class="fx-evenly-center"
 class="fx-evenly-stretch"
 ```
-
-This scss file is using _multiple of 4_ and of _0 to 200px_ to apply styles in margin and padding; so if you whould like change, just download the layout.scss and remove that condition
-
 ### Todos
 
 - Write MORE styles
