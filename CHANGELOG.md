@@ -19,6 +19,6 @@
 
 [unreleased]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.1...HEAD
 [0.0.1]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.1...v0.0.1
-[0.0.2]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.2...v0.0.1
+[0.0.2]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.1...v0.0.2
 
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
