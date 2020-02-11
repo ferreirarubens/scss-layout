@@ -98,7 +98,7 @@ $directions: '', b, t, r, l, x, y;
       }
     }
 
-    @for $value from 1 through 100 {
+    @for $value from 0 through 100 {
       @if $dir == 'col' {
         .fx-#{$value} {
           max-height: #{$value}% !important;
@@ -145,6 +145,10 @@ $directions: '', b, t, r, l, x, y;
 
   &-start {
     @include alignRowFlex('flex-start');
+  }
+  
+  &-end {
+    @include alignRowFlex('flex-end');
   }
 
   &-around {
