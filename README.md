@@ -1,4 +1,7 @@
 # SCSS LAYOUTS
+
+Check the [CHANGELOG](CHANGELOG.md) for the latest changes.
+
 SCSS file to make easy the apply some syles using css classes.
   - margin
   - padding
