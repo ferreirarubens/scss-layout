@@ -1,0 +1,19 @@
+.blocks {
+    min-width: 75px;
+    min-height: 50px;
+    border-radius: 3px;
+}
+
+.blocks.one {
+    background-color: #009688;
+}
+
+.blocks.two {
+    background-color: #9c27b0;
+    min-height: 100px;
+}
+
+.blocks.three {
+    background-color: #b08752;
+    min-height: 75px;
+}

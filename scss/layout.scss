@@ -1,35 +1,164 @@
-$directions: b, t, r, l, x, y;
+$directions: '', b, t, r, l, x, y;
 
-@mixin apply($type, $property, $direction, $value) {
+@mixin height-width($type, $value) {
+  .#{$type}-#{$value} {
+    @if $type == 'h' {
+      height: #{$value}px !important;
+    }
+
+    @if $type == 'w' {
+      width: #{$value}px !important;
+    }
+
+    @if $type == 'wh' {
+      width: #{$value}px !important;
+      height: #{$value}px !important;
+    }
+  }
+}
+
+@mixin margin-padding($type, $value, $direction) {
   .#{$type} {
     &#{$direction} {
       &-#{$value} {
-        @if $direction == "l" {
+        $property: 'margin';
+        @if $type == 'p' {
+          $property: 'padding';
+        }
+
+        @if $direction== 'l' {
           #{$property}-left: #{$value}px !important;
-        } @else if $direction == "r" {
+        } @else if $direction== 'r' {
           #{$property}-right: #{$value}px !important;
-        } @else if $direction == "t" {
+        } @else if $direction== 't' {
           #{$property}-top: #{$value}px !important;
-        } @else if $direction == "b" {
+        } @else if $direction== 'b' {
           #{$property}-bottom: #{$value}px !important;
-        } @else if $direction == "x" {
+        } @else if $direction== 'x' {
           #{$property}-left: #{$value}px !important;
           #{$property}-right: #{$value}px !important;
+        } @else if $direction== 'y' {
+          #{$property}-top: #{$value}px !important;
+          #{$property}-bottom: #{$value}px !important;
         } @else {
-          #{$property}-top: #{$value}px !important;
-          #{$property}-bottom: #{$value}px !important;
+          #{$property}: #{$value}px !important;
         }
       }
     }
   }
 }
 
-@for $i from 0 through 200 {
-  $canRegister: $i % 0 == 0 or $i % 4 == 0;
+@for $i from 0 through 500 {
+  $canRegister: $i % 0==0 or $i % 5==0;
   @if $canRegister {
     @each $direction in $directions {
-      @include apply("m", "margin", $direction, $i);
-      @include apply("p", "padding", $direction, $i);
+      @include margin-padding('m', $i, $direction);
+      @include margin-padding('p', $i, $direction);
+    }
+    @include height-width('h', $i);
+    @include height-width('w', $i);
+    @include height-width('wh', $i);
+  }
+}
+
+@mixin fx($dir) {
+  &-#{$dir} {
+    display: flex;
+    @if $dir == 'col' {
+      flex-direction: column !important;
+      &.fx {
+        &-start-center {
+          justify-content: flex-start;
+          align-items: center;
+        }
+        &-center-start {
+          justify-content: center;
+          align-items: flex-start;
+        }
+      }
+    }
+    @if $dir == 'row' {
+      flex-direction: row !important;
+    }
+
+    @for $value from 0 through 500 {
+      @if $dir == 'col' {
+        &.fx-gap-#{$value} {
+          :not(:first-child) {
+            margin-top: #{$value}px !important;
+          }
+        }
+      }
+      @if $dir == 'row' {
+        &.fx-gap-#{$value} {
+          :not(:first-child) {
+            margin-left: #{$value}px !important;
+          }
+        }
+      }
+    }
+
+    @for $value from 1 through 100 {
+      @if $dir == 'col' {
+        .fx-#{$value} {
+          max-height: #{$value}% !important;
+          flex: 1 1 100% !important;
+        }
+      }
+      @if $dir == 'row' {
+        .fx-#{$value} {
+          max-width: #{$value}% !important;
+          flex: 1 1 100% !important;
+        }
+      }
     }
   }
+}
+
+@mixin alignRowFlex($x) {
+  $yOptions: 'center', 'flex-start', 'stretch', 'flex-end';
+  @each $y in $yOptions {
+    $yClass: $y;
+    @if ($y == 'flex-start' or $y == 'flex-end') {
+      $yClass: str-slice($y, 6);
+    }
+    &-#{$yClass} {
+      display: flex;
+      justify-content: #{$x};
+      align-items: #{$y};
+      place-content: #{$y} #{$x};
+    }
+  }
+}
+
+.fx {
+  &-fill {
+    display: flex;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+  &-center {
+    @include alignRowFlex('center');
+  }
+
+  &-start {
+    @include alignRowFlex('flex-start');
+  }
+
+  &-around {
+    @include alignRowFlex('space-around');
+  }
+
+  &-between {
+    @include alignRowFlex('space-between');
+  }
+  
+  &-evenly {
+    @include alignRowFlex('space-evenly');
+  }
+
+  @include fx('col');
+  @include fx('row');
 }
