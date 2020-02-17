@@ -9,7 +9,7 @@
 - Margin
 - Padding
 
-## [0.0.2] (2020-02-11)
+## [0.0.2] (2020-02-17)
 ### Added
 - Height added
 - Width added

@@ -49,16 +49,13 @@ $directions: '', b, t, r, l, x, y;
 }
 
 @for $i from 0 through 500 {
-  $canRegister: $i % 0==0 or $i % 5==0;
-  @if $canRegister {
-    @each $direction in $directions {
-      @include margin-padding('m', $i, $direction);
-      @include margin-padding('p', $i, $direction);
-    }
-    @include height-width('h', $i);
-    @include height-width('w', $i);
-    @include height-width('wh', $i);
+  @each $direction in $directions {
+    @include margin-padding('m', $i, $direction);
+    @include margin-padding('p', $i, $direction);
   }
+  @include height-width('h', $i);
+  @include height-width('w', $i);
+  @include height-width('wh', $i);
 }
 
 @mixin fx($dir) {
@@ -146,7 +143,7 @@ $directions: '', b, t, r, l, x, y;
   &-start {
     @include alignRowFlex('flex-start');
   }
-  
+
   &-end {
     @include alignRowFlex('flex-end');
   }
@@ -158,7 +155,7 @@ $directions: '', b, t, r, l, x, y;
   &-between {
     @include alignRowFlex('space-between');
   }
-  
+
   &-evenly {
     @include alignRowFlex('space-evenly');
   }
