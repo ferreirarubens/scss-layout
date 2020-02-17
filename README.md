@@ -1,11 +1,13 @@
 # SCSS LAYOUTS
+## A SCSS lib to make easy the apply some syles using css classes.
 
 Check the [CHANGELOG](CHANGELOG.md) for the latest changes.
 
-SCSS file to make easy the apply some syles using css classes.
-
 - margin
 - padding
+- height
+- width
+- display flex
 
 ## Instalation
 
