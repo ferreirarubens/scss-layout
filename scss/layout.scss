@@ -1,3 +1,4 @@
+@import './palette';
 $directions: '', b, t, r, l, x, y;
 
 @mixin height-width($type, $value) {

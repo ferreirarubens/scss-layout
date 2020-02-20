@@ -8,10 +8,21 @@ Check the [CHANGELOG](CHANGELOG.md) for the latest changes.
 - height
 - width
 - display flex
+- material design color palette (background color and color)
 
 ## Instalation
 
-Download dist/css/layout.min.css to get minify css file and add into html
+### Download 
+Download file at dist/css/layout.min.css to get minify css file and add into html
+### Add npm module
+- install npm module
+```sh
+ npm install scss-layout
+```
+- get the scss from node_modules
+```sh
+ @import 'node_modules/scss-layout/scss/layout'
+```
 
 ## Usage (Margin) in px
 
@@ -151,16 +162,64 @@ class="fx-evenly-end"
 class="fx-evenly-center"
 class="fx-evenly-stretch"
 ```
-### Todos
+
+## Usage material design color palette
+> must import the scss file
+- create a material palette (example)
+```
+$palette: (
+  50: #e4e9ee,
+  100: #bbc9d4,
+  200: #8ea5b8,
+  300: #60809b,
+  400: #3e6585,
+  500: #1c4a70,
+  600: #194368,
+  700: #143a5d,
+  800: #005079,
+  900: #092241,
+  A100: #79adff,
+  A200: #468eff,
+  A400: #136fff,
+  A700: #0061f8,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+```
+- Include the @mixin material-palette
+```
+@include material-palette($palette, 'primary-example');
+```
+- Using color primary from $palette (.mat-color)
+```sh
+class="mat-color-primary-example"
+class="mat-color-primary-example-A200"
+```
+
+## Todos
 
 - Write MORE styles
-- Add to npm repository
+- Create example page
 
-### Tools
+## Tools
 
 - IDE: _Vs Code_
 
-#### Extensions: 
+## Extensions: 
 | Name | Link |
 | --------- | ----- |
 | Live Sass Compiler | [![Badge for version for Visual Studio Code extension ritwickdey.live-sass](https://vsmarketplacebadge.apphb.com/version-short/ritwickdey.live-sass.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass&wt.mc_id=angularessentials-github-jopapa) |

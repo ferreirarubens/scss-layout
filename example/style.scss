@@ -1,0 +1,90 @@
+@import './../scss/layout';
+
+.blocks {
+  min-width: 75px;
+  min-height: 50px;
+  border-radius: 3px;
+}
+
+.blocks.one {
+  background-color: #009688;
+}
+
+.blocks.two {
+  background-color: #9c27b0;
+  min-height: 100px;
+}
+
+.blocks.three {
+  background-color: #b08752;
+  min-height: 75px;
+}
+
+$md-primary: (
+  50: #e4e9ee,
+  100: #bbc9d4,
+  200: #8ea5b8,
+  300: #60809b,
+  400: #3e6585,
+  500: #1c4a70,
+  600: #194368,
+  700: #143a5d,
+  800: #005079,
+  900: #092241,
+  A100: #79adff,
+  A200: #468eff,
+  A400: #136fff,
+  A700: #0061f8,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$md-accent: (
+  50: #fff7e3,
+  100: #feeab8,
+  200: #fedc89,
+  300: #fece5a,
+  400: #fdc436,
+  500: #fdb913,
+  600: #fdb211,
+  700: #fcaa0e,
+  800: #fca20b,
+  900: #fc9306,
+  A100: #ffffff,
+  A200: #fff8f0,
+  A400: #ffe0bd,
+  A700: #ffd4a3,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+@include material-palette($md-primary, 'primary');
+@include material-palette($md-accent, 'accent');
