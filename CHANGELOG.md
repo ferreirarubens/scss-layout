@@ -23,9 +23,14 @@
 ### Changes
 - Margin and Padding are able to accept any numbers between 0 and 500
 
+## [0.0.4] (2020-02-22)
+### Fix
+- Gap elements
+
 [unreleased]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.1...HEAD
 [0.0.1]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.1...v0.0.1
 [0.0.2]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.1...v0.0.2
 [0.0.3]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.2...v0.0.3
+[0.0.4]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.3...v0.0.4
 
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)

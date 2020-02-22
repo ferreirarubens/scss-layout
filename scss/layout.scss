@@ -81,22 +81,18 @@ $directions: '', b, t, r, l, x, y;
 
     @for $value from 0 through 500 {
       @if $dir == 'col' {
-        &.fx-gap-#{$value} {
-          :not(:first-child) {
-            margin-top: #{$value}px !important;
-          }
+        &.fx-gap-#{$value} > :not(:first-child) {
+          margin-top: #{$value}px !important;
         }
       }
       @if $dir == 'row' {
-        &.fx-gap-#{$value} {
-          :not(:first-child) {
-            margin-left: #{$value}px !important;
-          }
+        &.fx-gap-#{$value} > :not(:first-child) {
+          margin-left: #{$value}px !important;
         }
       }
     }
 
-    @for $value from 0 through 100 {
+    @for $value from 1 through 100 {
       @if $dir == 'col' {
         .fx-#{$value} {
           max-height: #{$value}% !important;
