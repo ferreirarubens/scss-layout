@@ -1,6 +1,10 @@
 # SCSS Layout - CHANGELOG
 
 
+## [0.1.1] (2020-10-29)
+### Feature
+- Add black and white color
+
 ## [0.1.0] (2020-10-29)
 ### Feature
 - Height and Width with percent
@@ -51,5 +55,6 @@
 [0.0.5]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.4...v0.0.5
 [0.0.6]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.5...v0.0.6
 [0.1.0]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.6...v0.1.0
+[0.1.1]: https://github.com/ferreirarubens/scss-layout/compare/v0.1.0...v0.1.1
 
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)

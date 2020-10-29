@@ -26,6 +26,18 @@ $matPalettesBasic: (
   'blue-grey': $mat-blue-grey,
 );
 
+$mat-black: (
+  700: #000000,
+  contrast: (700: #ffffff)
+);
+
+$mat-white: (
+  700: #ffffff,
+  contrast: (700: #000000)
+);
+@include material-palette($mat-black, 'black', false);
+@include material-palette($mat-white, 'white', false);
+
 @each $key, $palette in $matPalettesBasic {
   @include material-palette($palette, $key, true);
 }

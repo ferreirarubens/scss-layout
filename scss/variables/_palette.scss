@@ -1,16 +1,23 @@
 $huesBasic: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
 $hues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
 
-@mixin material-palette($palette, $key, $onlyBasic: false) {
+@mixin material-palette($palette, $key, $onlyBasic: false, $blackWhite: false) {
   .mat-color {
     &-#{$key} {
       background-color: #{map-get($map: $palette, $key: 500)} !important;
       color: #{map-get($map: map-get($map: $palette, $key: contrast), $key: 500)} !important;
 
-      @each $var in if($onlyBasic, $huesBasic, $hues) {
-        &-#{$var} {
-          background-color: #{map-get($map: $palette, $key: $var)} !important;
-          color: #{map-get($map: map-get($map: $palette, $key: contrast), $key: $var)} !important;
+      @if ($blackWhite) {
+        &-700 {
+          background-color: #{map-get($map: $palette, $key: 700)} !important;
+          color: #{map-get($map: map-get($map: $palette, $key: contrast), $key: 700)} !important;
+        }
+      } @else {
+        @each $var in if($onlyBasic, $huesBasic, $hues) {
+          &-#{$var} {
+            background-color: #{map-get($map: $palette, $key: $var)} !important;
+            color: #{map-get($map: map-get($map: $palette, $key: contrast), $key: $var)} !important;
+          }
         }
       }
     }
