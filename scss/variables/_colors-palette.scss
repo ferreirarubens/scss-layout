@@ -1,0 +1,35 @@
+@import './colors';
+@import './palette';
+
+$matPalettes: (
+  'red': $mat-red,
+  'pink': $mat-pink,
+  'purple': $mat-purple,
+  'deep-purple': $mat-deep-purple,
+  'indigo': $mat-indigo,
+  'blue': $mat-blue,
+  'light-blue': $mat-light-blue,
+  'cyan': $mat-cyan,
+  'teal': $mat-teal,
+  'green': $mat-green,
+  'light-green': $mat-light-green,
+  'lime': $mat-lime,
+  'yellow': $mat-yellow,
+  'amber': $mat-amber,
+  'orange': $mat-orange,
+  'deep-orange': $mat-deep-orange,
+);
+
+$matPalettesBasic: (
+  'brown': $mat-brown,
+  'grey': $mat-grey,
+  'blue-grey': $mat-blue-grey,
+);
+
+@each $key, $palette in $matPalettesBasic {
+  @include material-palette($palette, $key, true);
+}
+
+@each $key, $palette in $matPalettes {
+  @include material-palette($palette, $key, false);
+}

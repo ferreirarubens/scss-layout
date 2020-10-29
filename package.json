@@ -1,6 +1,6 @@
 {
   "name": "scss-layout",
-  "version": "0.0.6",
+  "version": "0.1.0",
   
   "description": "SCSS file to make easy the apply some syles using css classes.",
   "main": "index.js",

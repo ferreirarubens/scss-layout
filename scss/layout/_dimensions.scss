@@ -1,0 +1,46 @@
+@mixin height-width($type, $value) {
+  .#{$type}-#{$value} {
+    @if $type == 'h' {
+      height: #{$value}px !important;
+    }
+
+    @if $type == 'w' {
+      width: #{$value}px !important;
+    }
+
+    @if $type == 'wh' {
+      width: #{$value}px !important;
+      height: #{$value}px !important;
+    }
+  }
+}
+
+@mixin height-width-percent($type, $value) {
+  .#{$type}#{$value} {
+    @if $type == 'h' {
+      height: calc(#{$value} * 1%) !important;
+    }
+
+    @if $type == 'w' {
+      width: calc(#{$value} * 1%) !important;
+    }
+
+    @if $type == 'wh' {
+      width: calc(#{$value} * 1%) !important;
+      height: calc(#{$value} * 1%) !important;
+    }
+  }
+}
+
+
+@for $i from 0 through 500 {
+  @include height-width('h', $i);
+  @include height-width('w', $i);
+  @include height-width('wh', $i);
+}
+
+@for $i from 0 through 100 {
+  @include height-width-percent('h', $i);
+  @include height-width-percent('w', $i);
+  @include height-width-percent('wh', $i);
+}

@@ -8,6 +8,7 @@ Check the [CHANGELOG](CHANGELOG.md) for the latest changes.
 - height
 - width
 - display flex
+- elevation (box-shadow)
 - material design color palette (background color and color)
 
 ## Instalation
@@ -21,7 +22,14 @@ Download file at dist/css/layout.min.css to get minify css file and add into htm
 ```
 - get the scss from node_modules
 ```sh
- @import 'node_modules/scss-layout/scss/layout'
+ @import 'node_modules/scss-layout/scss/core'
+```
+
+## Usage Elevation
+> There are 4 levels (1 - 4)
+to have level 2 of elevation
+```sh
+  class="elevation-2"
 ```
 
 ## Usage (Margin) in px
@@ -78,10 +86,18 @@ class="p-4"
 
 ## Usage (Height) in px
 
-to height 100px
+to height 100px or 100%
 
 ```sh
 class="h-100"
+```
+
+## Usage (Height) in %
+
+to height 100%
+
+```sh
+class="h100"
 ```
 
 ## Usage (Width) in px
@@ -92,12 +108,28 @@ to width 100px
 class="w-100"
 ```
 
+## Usage (Width) in %
+
+to width 100%
+
+```sh
+class="w100"
+```
+
 ## Usage (Width and Height) in px
 
-to width and height 100px - 0 to 500
+to width and height 100px (0 to 500)
 
 ```sh
 class="wh-100"
+```
+
+## Usage (Width and Height) in %
+
+to width and height 100% (0 to 100)
+
+```sh
+class="wh100"
 ```
 
 ## Usage Display Flex
@@ -200,7 +232,7 @@ $palette: (
   ),
 );
 ```
-- Include the @mixin material-palette
+- Include the @mixin material-palette (should pass true if the palette is from 50 to 900 only)
 ```
 @include material-palette($palette, 'primary-example');
 ```

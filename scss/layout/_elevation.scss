@@ -1,0 +1,18 @@
+$elevation-color-solid: rgba(0,0,0,.2);
+$elevation-color-shadow:  rgba(0,0,0,.14);
+$elevation-color-top:  rgba(0,0,0,.12);
+
+.elevation {
+  &-1 {
+    box-shadow: 0 3px 1px -2px $elevation-color-solid, 0 2px 2px 0 $elevation-color-shadow, 0 1px 5px 0 $elevation-color-top;
+  }
+  &-2 {
+    box-shadow: 0 2px 4px -1px $elevation-color-solid, 0 4px 5px 0 $elevation-color-shadow, 0 1px 10px 0 $elevation-color-top;
+  }
+  &-3 {
+    box-shadow: 0 3px 5px -1px $elevation-color-solid, 0 6px 10px 0 $elevation-color-shadow, 0 1px 18px 0 $elevation-color-top;
+  }
+  &-4 {
+    box-shadow: 0 5px 5px -3px $elevation-color-solid, 0 8px 10px 1px $elevation-color-shadow, 0 3px 14px 2px $elevation-color-top;
+  }
+}
