@@ -35,8 +35,9 @@ $mat-white: (
   700: #ffffff,
   contrast: (700: #000000)
 );
-@include material-palette($mat-black, 'black', false);
-@include material-palette($mat-white, 'white', false);
+
+@include material-palette($mat-black, 'black', false, true);
+@include material-palette($mat-white, 'white', false, true);
 
 @each $key, $palette in $matPalettesBasic {
   @include material-palette($palette, $key, true);

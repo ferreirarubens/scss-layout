@@ -1,41 +1,35 @@
+/* @mixin set-theme-primary($palette, $key) {
+  button {
+    &.btn {
+      &.btn-primary {
+        background-color: map-get($map: $palette, $key: 500);
+        color: map-get($map: map-get($map: $palette, $key: contrast), $key: 500);
+      }
+    }
+    &[color="primary"] {
+      background-color: map-get($map: $palette, $key: 500);
+      color: map-get($map: map-get($map: $palette, $key: contrast), $key: 500);
+    }
+  }
+}
+
+@mixin set-theme-accent($palette, $main) {
+  button {
+    &.btn {
+      &.btn-accent {
+        background-color: map-get($map: $palette, $key: $main);
+        color: map-get($map: map-get($map: $palette, $key: contrast), $key: $main);
+      }
+    }
+    &[color="accent"] {
+      background-color: map-get($map: $palette, $key: $main);
+      color: map-get($map: map-get($map: $palette, $key: contrast), $key: $main);
+    }
+  }
+} */
 .mat-color-black {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-50 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-100 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-200 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-300 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-400 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-500 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-600 {
-  background-color:  !important;
-  color:  !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .mat-color-black-700 {
@@ -43,109 +37,14 @@
   color: #ffffff !important;
 }
 
-.mat-color-black-800 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-900 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-A100 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-A200 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-A400 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-black-A700 {
-  background-color:  !important;
-  color:  !important;
-}
-
 .mat-color-white {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-50 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-100 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-200 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-300 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-400 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-500 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-600 {
-  background-color:  !important;
-  color:  !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .mat-color-white-700 {
   background-color: #ffffff !important;
   color: #000000 !important;
-}
-
-.mat-color-white-800 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-900 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-A100 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-A200 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-A400 {
-  background-color:  !important;
-  color:  !important;
-}
-
-.mat-color-white-A700 {
-  background-color:  !important;
-  color:  !important;
 }
 
 .mat-color-brown {
@@ -1627,7 +1526,7 @@
   place-content: flex-end flex-start;
 }
 
-.fx-end-center {
+.fx-end-center, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1839,24 +1738,16 @@
   -webkit-box-direction: normal !important;
       -ms-flex-direction: column !important;
           flex-direction: column !important;
-}
-
-.fx-col.fx-start-center {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
+  /* &.fx {
+        &-start-center {
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
           align-items: center;
-}
-
-.fx-col.fx-center-start {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
+        }
+        &-center-start {
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
           align-items: flex-start;
+        }
+      } */
 }
 
 .fx-col.fx-gap-0 > :not(:first-child) {
@@ -7277,6 +7168,17 @@
           flex: 1 1 100% !important;
 }
 
+/* @mixin flex-center-start
+@mixin flex-start
+@mixin flex-stretch
+@mixin flex-end
+
+@mixin flex-center()
+@mixin flex-start()
+@mixin flex-end()
+@mixin flex-around()
+@mixin flex-between()
+@mixin flex-evenly() */
 .h-0 {
   height: 0px !important;
 }
@@ -45203,78 +45105,169 @@
   min-height: 75px;
 }
 
-.mat-color-linx {
+.mat-color-linx-accent {
   background-color: #5a2d91 !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-50 {
+.mat-color-linx-accent-50 {
   background-color: #ebe6f2 !important;
   color: #000000 !important;
 }
 
-.mat-color-linx-100 {
+.mat-color-linx-accent-100 {
   background-color: #cec0de !important;
   color: #000000 !important;
 }
 
-.mat-color-linx-200 {
+.mat-color-linx-accent-200 {
   background-color: #ad96c8 !important;
   color: #000000 !important;
 }
 
-.mat-color-linx-300 {
+.mat-color-linx-accent-300 {
   background-color: #8c6cb2 !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-400 {
+.mat-color-linx-accent-400 {
   background-color: #734da2 !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-500 {
+.mat-color-linx-accent-500 {
   background-color: #5a2d91 !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-600 {
+.mat-color-linx-accent-600 {
   background-color: #522889 !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-700 {
+.mat-color-linx-accent-700 {
   background-color: #48227e !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-800 {
+.mat-color-linx-accent-800 {
   background-color: #3f1c74 !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-900 {
+.mat-color-linx-accent-900 {
   background-color: #2e1162 !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-A100 {
+.mat-color-linx-accent-A100 {
   background-color: #a983c6 !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-A200 {
+.mat-color-linx-accent-A200 {
   background-color: #9665ff !important;
   color: #000000 !important;
 }
 
-.mat-color-linx-A400 {
+.mat-color-linx-accent-A400 {
   background-color: #7432ff !important;
   color: #ffffff !important;
 }
 
-.mat-color-linx-A700 {
+.mat-color-linx-accent-A700 {
   background-color: #6219ff !important;
   color: #ffffff !important;
+}
+
+.mat-color-linx-accent {
+  background-color: #f65d02 !important;
+  color: #ffffff !important;
+}
+
+.mat-color-linx-accent-50 {
+  background-color: #feece1 !important;
+  color: #000000 !important;
+}
+
+.mat-color-linx-accent-100 {
+  background-color: #fcceb3 !important;
+  color: #000000 !important;
+}
+
+.mat-color-linx-accent-200 {
+  background-color: #fbae81 !important;
+  color: #000000 !important;
+}
+
+.mat-color-linx-accent-300 {
+  background-color: #f98e4e !important;
+  color: #ffffff !important;
+}
+
+.mat-color-linx-accent-400 {
+  background-color: #f77528 !important;
+  color: #ffffff !important;
+}
+
+.mat-color-linx-accent-500 {
+  background-color: #f65d02 !important;
+  color: #ffffff !important;
+}
+
+.mat-color-linx-accent-600 {
+  background-color: #f55502 !important;
+  color: #ffffff !important;
+}
+
+.mat-color-linx-accent-700 {
+  background-color: #f34b01 !important;
+  color: #ffffff !important;
+}
+
+.mat-color-linx-accent-800 {
+  background-color: #f24101 !important;
+  color: #ffffff !important;
+}
+
+.mat-color-linx-accent-900 {
+  background-color: #ef3001 !important;
+  color: #ffffff !important;
+}
+
+.mat-color-linx-accent-A100 {
+  background-color: #ffd994 !important;
+  color: #000000 !important;
+}
+
+.mat-color-linx-accent-A200 {
+  background-color: #ffc458 !important;
+  color: #000000 !important;
+}
+
+.mat-color-linx-accent-A400 {
+  background-color: #ffb020 !important;
+  color: #000000 !important;
+}
+
+.mat-color-linx-accent-A700 {
+  background-color: #fda400 !important;
+  color: #ffffff !important;
+}
+
+body {
+  width: 100%;
+  background-color: #f65d02 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body > :not(:first-child) {
+  margin-left: 30px !important;
 }
 /*# sourceMappingURL=style.css.map */

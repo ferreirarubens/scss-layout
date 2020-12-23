@@ -1,6 +1,11 @@
 # SCSS Layout - CHANGELOG
 
 
+## [0.1.2] (2020-12-23)
+### Feature
+- Add flex mixins
+- Add get color from palette functions
+
 ## [0.1.1] (2020-10-29)
 ### Feature
 - Add black and white color
@@ -56,5 +61,6 @@
 [0.0.6]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.5...v0.0.6
 [0.1.0]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.6...v0.1.0
 [0.1.1]: https://github.com/ferreirarubens/scss-layout/compare/v0.1.0...v0.1.1
+[0.1.2]: https://github.com/ferreirarubens/scss-layout/compare/v0.1.1...v0.1.2
 
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)

@@ -3,7 +3,7 @@
     display: flex;
     @if $dir == 'col' {
       flex-direction: column !important;
-      &.fx {
+      /* &.fx {
         &-start-center {
           justify-content: flex-start;
           align-items: center;
@@ -12,7 +12,7 @@
           justify-content: center;
           align-items: flex-start;
         }
-      }
+      } */
     }
     @if $dir == 'row' {
       flex-direction: row !important;
@@ -98,4 +98,48 @@
 
   @include fx('col');
   @include fx('row');
+}
+
+@mixin flex($dir: row) {
+  display: flex;
+  flex-direction: $dir;
+}
+
+@mixin flex-row-gap($gap) {
+  @include flex(row);
+  &>:not(:first-child) {
+    margin-left: #{$gap}px !important;
+  }
+}
+
+@mixin flex-col-gap($gap) {
+  @include flex(column);
+  &>:not(:first-child) {
+    margin-top: #{$gap}px !important;
+  }
+}
+
+/* @mixin flex-center-start
+@mixin flex-start
+@mixin flex-stretch
+@mixin flex-end
+
+@mixin flex-center()
+@mixin flex-start()
+@mixin flex-end()
+@mixin flex-around()
+@mixin flex-between()
+@mixin flex-evenly() */
+
+$orderXOptions: 'center', 'start', 'end', 'around', 'between', 'evenly';
+$orderYOptions: 'center', 'start', 'stretch', 'end';
+
+@mixin flex-aligh($x) {
+  @each $itemX in $orderXOptions {
+    @each $itemY in $orderYOptions {
+      @if($x == '#{$itemX}-#{$itemY}') {
+        @extend .fx-#{$x};
+      }
+    }
+  }
 }

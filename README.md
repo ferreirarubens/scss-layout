@@ -236,11 +236,39 @@ $palette: (
 ```
 @include material-palette($palette, 'primary-example');
 ```
+- Get the color from palette
+```sh
+background-color: palette-color($palette);
+background-color: palette-color($palette, 500);
+```
+- Get the contrast color from palette
+```sh
+color: palette-color-contrast($palette);
+color: palette-color-contrast($palette, 500);
+```
 - Using color primary from $palette (.mat-color)
 ```sh
 class="mat-color-primary-example"
 class="mat-color-primary-example-A200"
 ```
+
+## Usage mixins
+### flex
+```sh
+@include flex('column') // to column
+@include flex() // to row
+```
+### flex-gap
+```sh
+@include flex-row-gap(20) // to row
+@include flex-col-gap(20) // to column
+```
+
+### flex-aligh
+```sh
+@include flex-align('center-center')
+```
+> check options on [Flex Align](#Flex-Align)
 
 ## Todos
 

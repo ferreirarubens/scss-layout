@@ -20,7 +20,7 @@
   min-height: 75px;
 }
 
-$linx-palette: (
+$linx-primary: (
   50: #ebe6f2,
   100: #cec0de,
   200: #ad96c8,
@@ -53,4 +53,47 @@ $linx-palette: (
   ),
 );
 
-@include material-palette($linx-palette, 'linx');
+$linx-accent: (
+  50: #feece1,
+  100: #fcceb3,
+  200: #fbae81,
+  300: #f98e4e,
+  400: #f77528,
+  500: #f65d02,
+  600: #f55502,
+  700: #f34b01,
+  800: #f24101,
+  900: #ef3001,
+  A100: #ffd994,
+  A200: #ffc458,
+  A400: #ffb020,
+  A700: #fda400,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #ffffff
+  )
+);
+
+@include material-palette($linx-primary, 'linx-accent');
+@include material-palette($linx-accent, 'linx-accent');
+// @include set-theme-primary($linx-primary, 500);
+// @include set-theme-accent($linx-accent, 500);
+
+body {
+  width: 100%;
+  background-color: palette-color($linx-accent) !important;
+  @include flex-row-gap(30);
+  @include flex-align('end-center')
+}
