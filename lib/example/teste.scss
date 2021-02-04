@@ -1,0 +1,14 @@
+div {
+  &.box {
+    .box,&-inside{
+      background: red;
+
+      .box-title {
+        color: red;
+        &-description {
+          color: black;
+        }
+      }
+    }
+  }
+}

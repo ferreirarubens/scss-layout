@@ -1,0 +1,25 @@
+{
+  "name": "scss-layout",
+  "version": "0.1.2",
+  
+  "description": "SCSS file to make easy the apply some syles using css classes.",
+  "main": "index.js",
+  "style": "dist/css/layout.min.css",
+  "sass": "scss/layout.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferreirarubens/scss-layout.git"
+  },
+  "keywords": [
+    "scss"
+  ],
+  "author": "ferreirarubens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ferreirarubens/scss-layout/issues"
+  },
+  "homepage": "https://github.com/ferreirarubens/scss-layout#readme"
+}
