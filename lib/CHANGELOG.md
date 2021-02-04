@@ -1,6 +1,10 @@
 # SCSS Layout - CHANGELOG
 
 
+## [0.2.0] (2021-02-04)
+### Feature
+- Add Demo page
+
 ## [0.1.2] (2020-12-23)
 ### Feature
 - Add flex mixins
@@ -62,5 +66,6 @@
 [0.1.0]: https://github.com/ferreirarubens/scss-layout/compare/v0.0.6...v0.1.0
 [0.1.1]: https://github.com/ferreirarubens/scss-layout/compare/v0.1.0...v0.1.1
 [0.1.2]: https://github.com/ferreirarubens/scss-layout/compare/v0.1.1...v0.1.2
+[0.2.0]: https://github.com/ferreirarubens/scss-layout/compare/v0.1.2...v0.2.0
 
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
