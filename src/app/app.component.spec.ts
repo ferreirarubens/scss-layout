@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'scss-layout-demo'`, () => {
+  it(`should have as title 'scss-layout'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('scss-layout-demo');
+    expect(app.title).toEqual('scss-layout');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('scss-layout-demo app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('scss-layout app is running!');
   });
 });
