@@ -1,6 +1,6 @@
 {
   "name": "scss-layout",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "buid-github": "ng build --prod --base-href 'https://ferreirarubens.github.io/scss-layout/'",
+    "build-github": "ng build --prod --base-href https://ferreirarubens.github.io/scss-layout/",
     "publish-github": "npx angular-cli-ghpages --dir=dist/scss-layout"
   },
   "private": true,

@@ -2,28 +2,28 @@
   <h1 class="mat-headline">Palette Colors</h1>
   <div class="grid-palette">
     <div class="fx-col fx-start-stretch w100" *ngFor="let palette of fullPalettes">
-      <span class="mat-headline">{{palette}}</span>
+      <div class="fx-row fx-between-center"><span class="mat-headline">{{palette}}</span> <span>class</span></div>
       <div class="h-50 fx-row fx-between-center px-50  elevation-2" *ngFor="let hue of fullHues" [ngClass]="getClasses(palette, hue)">
         <span>{{hue ? hue : 'Default (500)'}}</span>
         <pre>{{getClasses(palette, hue)}}</pre>
       </div>
     </div>
     <div class="fx-col fx-start-stretch w100" *ngFor="let palette of basicPalettes">
-      <span class="mat-headline">{{palette}}</span>
+      <div class="fx-row fx-between-center"><span class="mat-headline">{{palette}}</span> <span>class</span></div>
       <div class="h-50 fx-row fx-between-center px-50  elevation-2" *ngFor="let hue of basicHues" [ngClass]="getClasses(palette, hue)">
         <span>{{hue ? hue : 'Default (500)'}}</span>
         <pre>{{getClasses(palette, hue)}}</pre>
       </div>
     </div>
     <div class="fx-col fx-start-stretch w100" *ngFor="let palette of basicPalettes">
-      <span class="mat-headline">{{palette}}</span>
+      <div class="fx-row fx-between-center"><span class="mat-headline">{{palette}}</span> <span>class</span></div>
       <div class="h-50 fx-row fx-between-center px-50  elevation-2" *ngFor="let hue of basicHues" [ngClass]="getClasses(palette, hue)">
         <span>{{hue ? hue : 'Default (500)'}}</span>
         <pre>{{getClasses(palette, hue)}}</pre>
       </div>
     </div>
     <div class="fx-col fx-start-stretch w100" *ngFor="let palette of monoPalettes">
-      <span class="mat-headline">{{palette}}</span>
+      <div class="fx-row fx-between-center"><span class="mat-headline">{{palette}}</span> <span>class</span></div>
       <div class="h-50 fx-row fx-between-center px-50  elevation-2" *ngFor="let hue of monoHues" [ngClass]="getClasses(palette, hue)">
         <span>{{hue ? hue : 'Default (700)'}}</span>
         <pre>{{getClasses(palette, hue)}}</pre>

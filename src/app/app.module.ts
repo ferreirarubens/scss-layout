@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +23,7 @@ import { BoxPaletteComponent } from './shared/components/box-palette/box-palette
     MatInputModule,
     MatToolbarModule,
     MatRadioModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
