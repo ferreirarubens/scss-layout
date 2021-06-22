@@ -25,7 +25,7 @@ export class BoxPaletteComponent implements OnInit {
     'deep-orange',
   ];
 
-  basicPalettes = ['brown', 'grey', 'blue-grey'];
+  basicPalettes = ['brown', 'gray', 'blue-gray'];
 
   basicHues = [
     '',
