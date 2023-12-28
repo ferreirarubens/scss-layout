@@ -1,0 +1,12 @@
+$fx-directions: (row, column, row-reverse, column-reverse);
+
+@mixin fx-direction($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@each $direction in $fx-directions {
+  .fx-#{$direction} {
+    @include fx-direction($direction);
+  }
+}

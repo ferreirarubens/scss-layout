@@ -1,0 +1,35 @@
+@mixin fx-gap($gap, $unit: px) {
+  gap: #{$gap}#{$unit};
+}
+
+@for $i from 0 through 500 {
+  .fx-gap-#{$i} {
+    @include fx-gap($i);
+  }
+}
+
+@for $i from 0 through 10 {
+  @for $j from 0 through 9 {
+    $gapr: $i + "." + $j;
+    $gaprStr: $i + "-" + $j;
+    @if ($i == 0 and $j == 0) or ($i == 10 and $j > 0) {
+      // não cria a classe
+    } @else {
+      @if $j == 0 {
+        .fx-gap-rem-#{$i} {
+          @include fx-gap($gapr, rem);
+        }
+        .fx-gap-em-#{$i} {
+          @include fx-gap($gapr, em);
+        }
+      } @else {
+        .fx-gap-rem-#{$gaprStr} {
+          @include fx-gap($gapr, rem);
+        }
+        .fx-gap-em-#{$gaprStr} {
+          @include fx-gap($gapr, em);
+        }
+      }
+    }
+  }
+}

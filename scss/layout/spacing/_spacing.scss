@@ -1,0 +1,106 @@
+$directions: "", b, t, r, l, x, y;
+$types: m, p;
+
+@mixin general-margin-padding($type, $value, $direction, $unity: px) {
+  $property: "margin";
+  @if $type == "p" {
+    $property: "padding";
+  }
+
+  @if $direction == "l" {
+    #{$property}-left: #{$value}#{$unity} !important;
+  } @else if $direction== "r" {
+    #{$property}-right: #{$value}#{$unity} !important;
+  } @else if $direction== "t" {
+    #{$property}-top: #{$value}#{$unity} !important;
+  } @else if $direction== "b" {
+    #{$property}-bottom: #{$value}#{$unity} !important;
+  } @else if $direction== "x" {
+    #{$property}-left: #{$value}#{$unity} !important;
+    #{$property}-right: #{$value}#{$unity} !important;
+  } @else if $direction== "y" {
+    #{$property}-top: #{$value}#{$unity} !important;
+    #{$property}-bottom: #{$value}#{$unity} !important;
+  } @else {
+    #{$property}: #{$value}#{$unity} !important;
+  }
+}
+
+@mixin margin-padding($type, $value, $direction, $unity: px) {
+  .#{$type} {
+    &#{$direction} {
+      &-#{$value} {
+        @include general-margin-padding($type, $value, $direction);
+      }
+    }
+  }
+}
+
+@for $i from 0 through 500 {
+  @each $direction in $directions {
+    @include margin-padding("m", $i, $direction);
+    @include margin-padding("p", $i, $direction);
+  }
+}
+
+@for $i from 0 through 10 {
+  @for $j from 0 through 9 {
+    $value: $i + "." + $j;
+    $valueStr: $i + "-" + $j;
+    @if ($i == 0 and $j == 0) or ($i == 10 and $j > 0) {
+      // não cria a classe
+    } @else {
+      @if $j == 0 {
+        @each $type in $types {
+          .#{$type} {
+            @each $direction in $directions {
+              &#{$direction} {
+                &-rem-#{$i} {
+                  @include general-margin-padding(
+                    $type,
+                    $value,
+                    $direction,
+                    rem
+                  );
+                }
+                &-em-#{$i} {
+                  @include general-margin-padding(
+                    $type,
+                    $value,
+                    $direction,
+                    em
+                  );
+                }
+              }
+            }
+          }
+        }
+      } @else {
+        @each $type in $types {
+          .#{$type} {
+            @each $direction in $directions {
+              &#{$direction} {
+                &-rem-#{$valueStr} {
+                  @include general-margin-padding(
+                    $type,
+                    $value,
+                    $direction,
+                    rem
+                  );
+                }
+                &-em-#{$valueStr} {
+                  @include general-margin-padding(
+                    $type,
+                    $value,
+                    $direction,
+                    em
+                  );
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

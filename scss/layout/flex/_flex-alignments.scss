@@ -1,0 +1,19 @@
+$fx-alignments: (start, end, center, baseline, stretch);
+$fx-justifications: (start, end, center, space-between, space-around);
+
+@mixin fx-alignment($alignment, $property) {
+  #{$property}: $alignment;
+}
+
+@each $alignment in $fx-alignments {
+  .fx-#{$alignment} {
+    @include fx-alignment($alignment, align-items);
+  }
+  @each $justification in $fx-justifications {
+    .fx-#{$justification}-#{$alignment} {
+      @include fx-alignment($alignment, align-items);
+      @include fx-alignment($justification, justify-content);
+    }
+  }
+}
+

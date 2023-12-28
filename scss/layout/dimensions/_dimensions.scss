@@ -1,0 +1,99 @@
+@mixin height-mixin($val, $unit: px) {
+  height: #{$val}#{$unit};
+}
+
+@mixin width-mixin($val, $unit: px) {
+  width: #{$val}#{$unit};
+}
+
+@for $i from 0 through 500 {
+  .h-#{$i} {
+    @include height-mixin($i);
+  }
+
+  .w-#{$i} {
+    @include width-mixin($i);
+  }
+
+  .wh-#{$i} {
+    @include height-mixin($i);
+    @include width-mixin($i);
+  }
+}
+
+@for $i from 0 through 100 {
+  .h-per-#{$i} {
+    @include height-mixin($i, "%");
+  }
+
+  .w-per-#{$i} {
+    @include width-mixin($i, "%");
+  }
+
+  .wh-per-#{$i} {
+    @include height-mixin($i, "%");
+    @include width-mixin($i, "%");
+  }
+}
+
+@for $i from 0 through 10 {
+  @for $j from 0 through 9 {
+    $value: $i + "." + $j;
+    $valueStr: $i + "-" + $j;
+    @if ($i == 0 and $j == 0) or ($i == 10 and $j > 0) {
+      // não cria a classe
+    } @else {
+      @if $j == 0 {
+        .h-rem-#{$i} {
+          @include height-mixin($value, rem);
+        }
+        .h-em-#{$i} {
+          @include height-mixin($value, em);
+        }
+
+        .w-rem-#{$i} {
+          @include width-mixin($value, rem);
+        }
+
+        .w-em-#{$i} {
+          @include width-mixin($value, em);
+        }
+
+        .wh-rem-#{$i} {
+          @include height-mixin($value, rem);
+          @include width-mixin($value, rem);
+        }
+
+        .wh-em-#{$i} {
+          @include height-mixin($value, em);
+          @include width-mixin($value, em);
+        }
+      } @else {
+        .h-rem-#{$valueStr} {
+          @include height-mixin($value, rem);
+        }
+        .h-em-#{$valueStr} {
+          @include height-mixin($value, em);
+        }
+
+        .w-rem-#{$valueStr} {
+          @include width-mixin($value, rem);
+        }
+
+        .w-em-#{$valueStr} {
+          @include width-mixin($value, em);
+        }
+
+        .wh-rem-#{$valueStr} {
+          @include height-mixin($value, rem);
+          @include width-mixin($value, rem);
+        }
+
+        .wh-em-#{$valueStr} {
+          @include height-mixin($value, em);
+          @include width-mixin($value, em);
+        }
+      }
+    }
+  }
+}

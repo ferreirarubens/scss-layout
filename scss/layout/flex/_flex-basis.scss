@@ -1,0 +1,41 @@
+@mixin fx-flex-basis($value, $unit: px) {
+  flex-basis: #{$value}#{$unit};
+}
+
+@for $i from 0 through 500 {
+  .fx-basis-#{$i} {
+    @include fx-flex-basis($i, "px");
+  }
+}
+
+@for $i from 0 through 100 {
+  .fx-basis-per-#{$i} {
+    @include fx-flex-basis($i, "%");
+  }
+}
+
+@for $i from 0 through 10 {
+  @for $j from 0 through 9 {
+    $value: $i + "." + $j;
+    $valueStr: $i + "-" + $j;
+    @if ($i == 0 and $j == 0) or ($i == 10 and $j > 0) {
+      // não cria a classe
+    } @else {
+      @if $j == 0 {
+        .fx-basis-rem-#{$i} {
+          @include fx-flex-basis($value, rem);
+        }
+        .fx-basis-em-#{$i} {
+          @include fx-flex-basis($value, em);
+        }
+      } @else {
+        .fx-basis-rem-#{$valueStr} {
+          @include fx-flex-basis($value, rem);
+        }
+        .fx-basis-em-#{$valueStr} {
+          @include fx-flex-basis($value, em);
+        }
+      }
+    }
+  }
+}

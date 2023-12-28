@@ -1,0 +1,31 @@
+@mixin fx-flex($value) {
+  flex: $value;
+}
+
+.fx-flex-auto {
+  @include fx-flex(auto);
+}
+
+.fx-flex-content {
+  @include fx-flex(content);
+}
+
+.fx-flex-none {
+  @include fx-flex(none);
+}
+
+.fx-flex-initial {
+  @include fx-flex(initial);
+}
+
+.fx-flex-min-content {
+  @include fx-flex(min-content);
+}
+
+.fx-flex-inherit {
+  @include fx-flex(inherit);
+}
+
+.fx-flex-unset {
+  @include fx-flex(unset);
+}

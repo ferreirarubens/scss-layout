@@ -21,7 +21,7 @@ Download file at dist/css/layout.min.css to get minify css file and add into htm
 ### Add npm module
 - install npm module
 ```sh
- npm install scss-layout
+ npm install scss-layout --save
 ```
 - get the scss from node_modules
 ```sh
