@@ -1,2 +1,77 @@
-@import './variables/colors-palette';
-@import './layout/layout';
+@import "./variables/colors-palette";
+@import "./layout/layout";
+
+@mixin sidebarBg($colorPrimary, $colorSecondary) {
+  .sidenav-toolbar {
+    background-color: $colorPrimary !important;
+  }
+
+  .sidenav {
+    background: transparent
+      linear-gradient(337deg, $colorSecondary 0%, $colorPrimary 100%) 0% 0%
+      no-repeat padding-box;
+
+    .mat-mdc-nav-list {
+      .mat-mdc-list-item {
+        &.active span {
+          color: $colorPrimary !important;
+        }
+
+        &:hover span {
+          color: $colorPrimary !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin themeComponents($palette, $key) {
+  body {
+    &.theme-primary {
+      &--#{$key} {
+        $primaryColor: map-get($palette, 500);
+        @each $var in $hues {
+          @if $var == 500 {
+            &.theme-secondary {
+              @each $keyS, $paletteS in $matPalettes {
+                &--#{$keyS} {
+                  $secondaryColor: map-get($paletteS, 500);
+                  @include sidebarBg($primaryColor, $secondaryColor);
+
+                  @each $varS in $hues {
+                    &-#{$varS} {
+                      $secondaryColor: map-get($paletteS, $varS);
+                      @include sidebarBg($primaryColor, $secondaryColor);
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &-#{$var} {
+            $primaryColor: map-get($palette, $var);
+            &.theme-secondary {
+              @each $keyS, $paletteS in $matPalettes {
+                &--#{$keyS} {
+                  $secondaryColor: map-get($paletteS, 500);
+
+                  @each $varS in $hues {
+                    &-#{$varS} {
+                      $secondaryColor: map-get($paletteS, $varS);
+                      @include sidebarBg($primaryColor, $secondaryColor);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Usage
+@each $key, $palette in $matPalettes {
+  @include themeComponents($palette, $key);
+}
